@@ -1,0 +1,3 @@
+/cygdrive/d/AdventOfCode2016/Day1Cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/d/AdventOfCode2016/Day1Cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/AdventOfCode2016/Day1Cpp/cmake-build-debug/CMakeFiles/Day1Cpp.dir

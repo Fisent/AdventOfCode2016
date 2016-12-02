@@ -63,3 +63,5 @@ $RECYCLE.BIN/
 *.lnk
 /Day1/nbproject/private/
 /Day1/build/
+/Day2/nbproject/private/
+/Day2/build/

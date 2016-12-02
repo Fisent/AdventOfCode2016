@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/d/AdventOfCode2016/Day1Cpp/Santa.cpp
+Santa.h
+/cygdrive/d/AdventOfCode2016/Day1Cpp/Santa.h
+sstream
+-
+
+/cygdrive/d/AdventOfCode2016/Day1Cpp/Santa.h
+string
+-
+
+/cygdrive/d/AdventOfCode2016/Day1Cpp/main.cpp
+iostream
+-
+Santa.h
+/cygdrive/d/AdventOfCode2016/Day1Cpp/Santa.h
+
