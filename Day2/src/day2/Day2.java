@@ -19,8 +19,8 @@ public class Day2
      */
     public static void main(String[] args) throws FileNotFoundException
     {
-        Console c = new Console();
-        System.out.println(c.calculateAll());
+        ConsoleInterface console = new ConsoleInterface();
+        System.out.println(console.calculate());
     }
     
 }
