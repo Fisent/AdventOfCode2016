@@ -17,7 +17,7 @@ public class Day5
 {
 
     int index = 0;
-    String input = "ffykfhsq";
+    String input = "abc";
     
     public static void main(String[] args) throws NoSuchAlgorithmException
     {
@@ -27,8 +27,15 @@ public class Day5
         while(password.contains("_"))
         {
             String next = MD5(d.findNext());
-            password = replace(password, Integer.parseInt(charAt(5)), next.charAt(6) + "");
             
+            if(Character.isDigit(next.charAt(5)))
+            {
+                int index = Integer.parseInt(next.charAt(5) + "");
+                if(index>=0 && index<8 && password.charAt(index) == '_')
+                {
+                    password = replace(password, Integer.parseInt(next.charAt(5) + ""), next.charAt(6) + "");
+                }
+            }
             
             
             d.index++;
