@@ -23,11 +23,19 @@ public class Day7
     public static void main(String[] args) throws FileNotFoundException
     {
         int i = 0;
-        System.out.println(checkLine("ioxxoj[asdfgh]zxcvbn"));
         Scanner scan = new Scanner(new FileInputStream("input.txt"));
+        /*
         while(scan.hasNextLine())
         {
             if(checkLine(scan.nextLine()))i++;
+        }
+        System.out.println(i);*/
+        
+        SLLChecker sll = new SLLChecker();
+        System.out.println(sll.checkLine("wwwebasda[wasdbabre]"));
+        while(scan.hasNextLine())
+        {
+            if(sll.checkLine(scan.nextLine()))i++;
         }
         System.out.println(i);
     }
