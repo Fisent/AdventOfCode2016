@@ -5,6 +5,10 @@
  */
 package day8;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  *
  * @author lukasz
@@ -15,11 +19,19 @@ public class Day8
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws FileNotFoundException
     {
+        execute();
+    }
+    
+    public static void execute() throws FileNotFoundException
+    {
+        Scanner scan = new Scanner(new FileInputStream("input.txt"));
         Screen s = new Screen();
-        s.rectangle(3, 3);
-        s.rotateRow(0);
+        while(scan.hasNextLine())
+        {
+            s.readLine(scan.nextLine());
+        }
         System.out.println(s);
     }
     
