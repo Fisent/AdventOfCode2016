@@ -26,7 +26,7 @@ public class Processor
         pc = 0;
         registers.put("a", 0);
         registers.put("b", 0);
-        registers.put("c", 0);
+        registers.put("c", 1);
         registers.put("d", 0);
     }
     
@@ -40,13 +40,17 @@ public class Processor
     
     public void nextClock()
     {
-        System.out.println("pc: " + pc);
+        //System.out.println("pc: " + pc + "registers: " + registers.toString());
         String instruction = program.get(pc++);
         String[] tab = instruction.split("\\s+");
         
         if(tab[0].equals("cpy"))
         {
-            copy(Integer.parseInt(tab[1]), tab[2]);
+            if(registers.containsKey(tab[1]))
+            {
+                copy(registers.get(tab[1]), tab[2]);
+            }
+            else copy(Integer.parseInt(tab[1]), tab[2]);
         }
         else if(tab[0].equals("inc")) increase(tab[1]);
         else if(tab[0].equals("dec")) decrease(tab[1]);
@@ -61,7 +65,6 @@ public class Processor
     public void copy(String register0, String register1)
     {
         int a0 = registers.get(register0);
-        System.out.println(a0);
         registers.put(register1, a0);
     }
     
@@ -77,10 +80,19 @@ public class Processor
     
     public void jumpIfNotZero(String register, int howManySteps)
     {
-        if(registers.get(register) != 0)
+        if(registers.containsKey(register))
         {
-            pc += howManySteps;
+            if(registers.get(register) != 0)pc += howManySteps-1;
         }
+        else
+        {
+            if(Integer.parseInt(register) != 0) pc+=howManySteps-1;
+        }
+    }
+    
+    public void jumpIfNotZero(int reg, int howManySteps)
+    {
+        if(reg!=0) pc+= howManySteps;
     }
     
     public void loadProgram() throws FileNotFoundException
