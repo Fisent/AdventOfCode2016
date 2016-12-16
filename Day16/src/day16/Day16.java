@@ -17,7 +17,7 @@ public class Day16
      */
     public static void main(String[] args)
     {
-        String expanded = dragonCurve("10111011111001111", 272);
+        String expanded = dragonCurve("10111011111001111", 35651584);
         System.out.println(checksum(expanded));
         
     }
@@ -43,7 +43,7 @@ public class Day16
     {
         while(input.length()!=length)
         {
-            System.out.println(input);
+            System.out.println(input.length());
             if(input.length()>length)
             {
                 input = input.substring(0, length);
