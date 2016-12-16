@@ -78,5 +78,4 @@ public class Day16
         }
         return input;
     }
-    
 }
